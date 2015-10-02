@@ -12,3 +12,7 @@ An urban dictionary for Wellesley College. Users can explore, vote on, and contr
 - [RSpec](https://github.com/rspec/rspec-rails), [FactoryGirl](https://github.com/thoughtbot/factory_girl_rails), and [Capybara](https://github.com/jnicklas/capybara) for tests.
 - [Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4) for app hosting
 
+
+### Cloning the Project
+
+- Checklist for setting up a Rails Dev env: http://railsapps.github.io/installrubyonrails-mac.html
