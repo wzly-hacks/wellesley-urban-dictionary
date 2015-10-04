@@ -16,3 +16,24 @@ An urban dictionary for Wellesley College. Users can explore, vote on, and contr
 ### Cloning the Project
 
 - Checklist for setting up a Rails Dev env: http://railsapps.github.io/installrubyonrails-mac.html
+
+### My Ruby Trail
+
+This is an annotated list of commands I used in this project.
+
+```
+#create project specific Gemset and install Rails
+rvm use ruby-2.2.3@wzly_dict --ruby-version --create
+gem install rails --version=4.1.6
+
+#create new project in current directory. Exclude standard unit test packages.
+rails new . -T
+
+#create the database if not already created
+rake db:create
+
+#create a few welcome views. need a controller to go along with that
+rails g controller welcome index about
+
+rake routes
+```
