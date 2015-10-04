@@ -29,6 +29,9 @@ gem install rails --version=4.1.6
 #create new project in current directory. Exclude standard unit test packages.
 rails new . -T
 
-#create the database
+#create the database if not already created
 rake db:create
+
+#create a few welcome views. need a controller to go along with that
+rails g controller welcome index about
 ```
