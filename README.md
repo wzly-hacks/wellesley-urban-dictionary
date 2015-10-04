@@ -34,4 +34,6 @@ rake db:create
 
 #create a few welcome views. need a controller to go along with that
 rails g controller welcome index about
+
+rake routes
 ```
