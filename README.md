@@ -55,6 +55,12 @@ rails g controller Entries index show new edit
 rails g devise:install
 rails g devise:views
 rails g devise User
+
+#figaro
+figaro install
+figaro heroku:set -e production
+
+rake secret
 ```
 
 ### Heroku command reference
@@ -63,5 +69,11 @@ rails g devise User
 $ heroku login
 $ heroku create <app name>
 $ git push heroku master
+$ heroku addons
+$ heroku config:set SECRET_KEY_BASE=thegeneratedtoken
+$ heroku config
+
+#sendgrid
+heroku addons:create sendgrid:starter
 ```
 
