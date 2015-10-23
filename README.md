@@ -47,6 +47,9 @@ rails g rspec:install
 
 #seed data
 rake db:seed
+
+#controllers
+rails g controller Entries index show new edit
 ```
 
 ### Heroku command reference
