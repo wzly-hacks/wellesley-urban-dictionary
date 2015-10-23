@@ -44,6 +44,9 @@ rake db:migrate
 
 #add rspec
 rails g rspec:install
+
+#seed data
+rake db:seed
 ```
 
 ### Heroku command reference
