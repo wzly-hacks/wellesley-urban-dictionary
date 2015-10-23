@@ -41,6 +41,9 @@ rake routes
 rails g model Entry title:string body:text
 rails g model Comment body:text entry:references
 rake db:migrate
+
+#add rspec
+rails g rspec:install
 ```
 
 ### Heroku command reference
