@@ -6,5 +6,5 @@ class User < ActiveRecord::Base
          :validatable, :confirmable
 
   has_many :entries
-  
+
 end
