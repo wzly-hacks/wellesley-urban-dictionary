@@ -15,3 +15,41 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-bottom: 60px;
+}
+
+.container {
+	width: auto;
+	max-width: 700px;
+	padding: 0 15px;
+}
+
+.container .text-muted {
+	margin: 20px 0;
+}
+
+.user-info {
+	margin-top: 9px;
+}
+
+.navbar {
+	margin-top: 5px;
+	margin-bottom: 20px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	background-color: #f5f5f5;
+}
