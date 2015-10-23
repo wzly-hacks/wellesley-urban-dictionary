@@ -64,6 +64,9 @@ rake secret
 
 #associations
 rails g migration AddUserToEntries user_id:integer
+
+#authorization
+rails g pundit:install
 ```
 
 ### Heroku command reference

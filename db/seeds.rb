@@ -21,6 +21,35 @@ user.update_attributes!(
 	email: 'psoshnin@gmail.com',
 	password: 'popocorn')
 
+# Create an admin user
+admin = User.new(
+	name: "Admin",
+	email: "Admin@hello.com",
+	password: "helloadmin",
+	role: 'admin'
+	)
+admin.skip_confirmation!
+admin.save!
+
+# Create a moderator
+moderator = User.new(
+	name: "Moderator",
+	email: "Mod@hello.com",
+	password: "hellomoder",
+	role: 'moderator'
+	)
+moderator.skip_confirmation!
+moderator.save!
+
+#create a member
+member = User.new(
+	name: "Member",
+	email: "Member@hello.com",
+	password: "hellomember"
+	)
+member.skip_confirmation!
+member.save!
+
 #Create entries
 50.times do 
 	Entry.create!(

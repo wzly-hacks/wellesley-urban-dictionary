@@ -7,4 +7,12 @@ class User < ActiveRecord::Base
 
   has_many :entries
 
+  def admin?
+  	role == 'admin'
+  end
+
+  def moderator?
+  	role == 'moderator'
+  end
+
 end
