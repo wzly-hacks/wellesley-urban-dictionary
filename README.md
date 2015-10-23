@@ -36,6 +36,11 @@ rake db:create
 rails g controller welcome index about
 
 rake routes
+
+#create new models
+rails g model Entry title:string body:text
+rails g model Comment body:text entry:references
+rake db:migrate
 ```
 
 ### Heroku command reference
