@@ -17,7 +17,7 @@ An urban dictionary for Wellesley College. Users can explore, vote on, and contr
 
 - Checklist for setting up a Rails Dev env: http://railsapps.github.io/installrubyonrails-mac.html
 
-### My Ruby Trail
+### Rails command reference
 
 This is an annotated list of commands I used in this project.
 
@@ -36,4 +36,27 @@ rake db:create
 rails g controller welcome index about
 
 rake routes
+
+#create new models
+rails g model Entry title:string body:text
+rails g model Comment body:text entry:references
+rake db:migrate
+
+#add rspec
+rails g rspec:install
+
+#seed data
+rake db:seed
+
+#controllers
+rails g controller Entries index show new edit
 ```
+
+### Heroku command reference
+
+```
+$ heroku login
+$ heroku create <app name>
+$ git push heroku master
+```
+
