@@ -12,7 +12,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = Entry.new(params.require(:entry).permit(:title, :body))
+    @entry = current_user.entries.build(params.require(:entry).permit(:title, :body))
     if @entry.save
       flash[:notice] = "Entry was saved."
       redirect_to @entry

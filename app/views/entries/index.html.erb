@@ -5,6 +5,11 @@
 			<h4 class="media-heading">
 				<%= link_to entry.title, entry %>
 			</h4>
+			<small>
+			submitted <%= time_ago_in_words(entry.created_at) %> ago by
+			<%= entry.user.name %> <br>
+			<%= entry.comments.count %> Comments
+			</small>
 		</div>
 	</div>
 <% end %>

@@ -4,6 +4,7 @@ require 'faker'
 
 5.times do
 	user = User.new(
+		name: Faker::Name.name,
 		email: Faker::Internet.email,
 		password: Faker::Lorem.characters(10)
 		)
@@ -16,6 +17,7 @@ users = User.all
 user = User.first
 user.skip_reconfirmation!
 user.update_attributes!(
+	name: 'Polina',
 	email: 'psoshnin@gmail.com',
 	password: 'popocorn')
 

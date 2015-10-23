@@ -16,7 +16,7 @@
 
 			<div class="pull-right user-info">
 				<% if current_user %>
-					Hello <%= current_user.email%>
+					Hello <%= current_user.name%>!
 					<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 				<% else %>
 					<%= link_to "Sign In", new_user_session_path %> or 
