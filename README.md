@@ -50,6 +50,11 @@ rake db:seed
 
 #controllers
 rails g controller Entries index show new edit
+
+#devise
+rails g devise:install
+rails g devise:views
+rails g devise User
 ```
 
 ### Heroku command reference
