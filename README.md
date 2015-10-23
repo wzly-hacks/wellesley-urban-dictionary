@@ -61,6 +61,9 @@ figaro install
 figaro heroku:set -e production
 
 rake secret
+
+#associations
+rails g migration AddUserToEntries user_id:integer
 ```
 
 ### Heroku command reference
