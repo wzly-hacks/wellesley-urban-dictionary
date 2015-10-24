@@ -20,13 +20,9 @@
 					<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
 
 				<% else %>
-
-					<li class="dropdown">
-
-						<!-- experiment -->
-					<%= link_to "Sign In", login_path,  { :class =>"dropdown-toggle", :'data-toggle' => "dropdown"} %>
-					<%= render 'devise/sessions/form' %>
-								
+					<!-- <li class="dropdown"> -->
+						<!-- remove sign in experiment -->
+					<%= link_to "Sign In", new_user_session_path %>			
 				<% end %>
 			</div>
 		</ul>
@@ -46,7 +42,11 @@
 			</div>
 		<% end %>
 
-		<%= yield %>
+		<section class="content">
+
+			<%= yield %>
+
+		</section>
 	</div>
 
 	<footer class="footer">

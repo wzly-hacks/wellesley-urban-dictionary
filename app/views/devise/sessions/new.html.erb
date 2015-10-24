@@ -1,4 +1,11 @@
+<section id="auth-form-container">
+
 <h2>Sign in</h2>
+<span class="divider">
+    <h4 class="text">Or</h4>
+  </span>
+
+  <div class="user-signin">
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <% devise_error_messages! %>
@@ -13,17 +20,17 @@
   </div>
 
   <div class="form-group">
-  <% if devise_mapping.rememberable? %>
-    <%= f.label :remember_me, class: 'checkbox' do %>
-      <%= f.check_box :remember_me %> Remember me
-    <% end %>
-  <% end %>
   <%= f.submit "Sign in", class: 'btn btn-success' %>
   </div>
 
+  <ul class="signup-forgot">
   <div class="form-group">
     <%= render "devise/shared/links" %>
   </div>
+  </ul>
 <% end %>
+
+</div>
+</section>
 
 
