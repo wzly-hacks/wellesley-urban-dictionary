@@ -32,15 +32,21 @@ rails new . -T
 #create the database if not already created
 rake db:create
 
-#create a few welcome views. need a controller to go along with that
+#controllers
 rails g controller welcome index about
-
+rails g controller topics index new show edit
+rails g controller entries index new show edit
 rake routes
 
-#create new models
+#models
 rails g model Entry title:string body:text
 rails g model Comment body:text entry:references
+rails g model topic name:string public:boolean description:text
 rake db:migrate
+
+#associations
+rails g migration AddUserToEntries user_id:integer
+rails g migration AddTopicToEntries topic_id:integer:index
 
 #add rspec
 rails g rspec:install
@@ -58,12 +64,8 @@ rails g devise User
 
 #figaro
 figaro install
-figaro heroku:set -e production
-
 rake secret
-
-#associations
-rails g migration AddUserToEntries user_id:integer
+figaro heroku:set -e production
 
 #authorization
 rails g pundit:install

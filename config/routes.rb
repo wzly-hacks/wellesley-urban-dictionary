@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-
   devise_for :users 
 
   devise_scope :user do
@@ -8,8 +7,10 @@ Rails.application.routes.draw do
     post 'login' => 'devise/sessions#create'
   end
 
-  resources :entries
-  resources :topics
+  resources :topics do 
+    resources :entries, except: [:index]
+  end
+
   get 'about' => 'welcome#about'
 
   get 'index' => 'entries#index'

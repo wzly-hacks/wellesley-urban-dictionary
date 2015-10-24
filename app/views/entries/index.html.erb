@@ -1,7 +1,7 @@
 <h1>All Entries</h1>
 
 <% if policy(Entry.new).create? %>
-	<%= link_to "New Entry", new_entry_path, class: 'btn btn-success' %>
+	<%= link_to "New Entry", new_topic_entry_path, class: 'btn btn-success' %>
 <% end %>
 
 <% @entries.each do |entry| %>

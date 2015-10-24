@@ -1,6 +1,6 @@
 <h1>Edit Entry</h1>
 
-<%= form_for @entry do |f| %>
+<%= form_for [@topic, @entry] do |f| %>
 	<div class="form-group">
 		<%= f.label :title %>
 		<%= f.text_field :title, class: 'form-control', placeholder: "Enter title" %>
