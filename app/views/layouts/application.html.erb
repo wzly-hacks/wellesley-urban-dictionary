@@ -10,17 +10,23 @@
 <body>
 	<div class="container">
 		<ul class="nav nav-tabs">
-			<li><%= link_to "Home", root_path %></li>
-			<li><%= link_to "About", about_path %></li>
-			<li><%= link_to "All Entries", index_path %></li>
+			<li role="presentation"><%= link_to "Home", root_path %></li>
+			<li role="presentation"><%= link_to "About", about_path %></li>
+			<li role="presentation"><%= link_to "All Entries", index_path %></li>
 
 			<div class="pull-right user-info">
 				<% if current_user %>
 					Hello <%= current_user.name%>!
 					<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+
 				<% else %>
-					<%= link_to "Sign In", new_user_session_path %> or 
-					<%= link_to "Sign Up", new_user_registration_path %>
+
+					<li class="dropdown">
+
+						<!-- experiment -->
+					<%= link_to "Sign In", login_path,  { :class =>"dropdown-toggle", :'data-toggle' => "dropdown"} %>
+					<%= render 'devise/sessions/form' %>
+								
 				<% end %>
 			</div>
 		</ul>
