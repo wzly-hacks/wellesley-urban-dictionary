@@ -19,7 +19,7 @@ user.skip_reconfirmation!
 user.update_attributes!(
 	name: 'Polina',
 	email: 'psoshnin@gmail.com',
-	password: 'popocorn')
+	password: 'popcorns')
 
 # Create an admin user
 admin = User.new(

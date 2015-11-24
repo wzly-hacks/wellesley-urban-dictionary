@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   end
 
   resources :topics do 
-    resources :entries, except: [:index]
+    resources :entries 
+    # except: [:index]
   end
 
   get 'about' => 'welcome#about'

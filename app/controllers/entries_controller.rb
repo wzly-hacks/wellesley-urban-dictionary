@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
   def index
   	@entries = Entry.all
+    
     authorize @entries
   end
 
@@ -17,6 +18,7 @@ class EntriesController < ApplicationController
   end
 
   def create
+    @topic = Topic.find(params[:topic_id])
     @entry = current_user.entries.build(params.require(:entry).permit(:title, :body))
     authorize @entry
     if @entry.save
