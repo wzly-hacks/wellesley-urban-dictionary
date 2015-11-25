@@ -89,3 +89,5 @@ $ heroku run rake db:migrate
 heroku addons:create sendgrid:starter
 ```
 
+Status: stopped at uploading images.
+
