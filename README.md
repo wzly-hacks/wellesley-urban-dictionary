@@ -32,15 +32,21 @@ rails new . -T
 #create the database if not already created
 rake db:create
 
-#create a few welcome views. need a controller to go along with that
+#controllers
 rails g controller welcome index about
-
+rails g controller topics index new show edit
+rails g controller entries index new show edit
 rake routes
 
-#create new models
+#models
 rails g model Entry title:string body:text
 rails g model Comment body:text entry:references
+rails g model topic name:string public:boolean description:text
 rake db:migrate
+
+#associations
+rails g migration AddUserToEntries user_id:integer
+rails g migration AddTopicToEntries topic_id:integer:index
 
 #add rspec
 rails g rspec:install
@@ -58,9 +64,11 @@ rails g devise User
 
 #figaro
 figaro install
+rake secret
 figaro heroku:set -e production
 
-rake secret
+#authorization
+rails g pundit:install
 ```
 
 ### Heroku command reference
@@ -72,8 +80,14 @@ $ git push heroku master
 $ heroku addons
 $ heroku config:set SECRET_KEY_BASE=thegeneratedtoken
 $ heroku config
+//logging
+$ heroku logs --tail
+//if something isn't working, you probably didn't do this:
+$ heroku run rake db:migrate
 
 #sendgrid
 heroku addons:create sendgrid:starter
 ```
+
+Status: stopped at uploading images.
 

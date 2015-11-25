@@ -10,17 +10,20 @@
 <body>
 	<div class="container">
 		<ul class="nav nav-tabs">
-			<li><%= link_to "Home", root_path %></li>
-			<li><%= link_to "About", about_path %></li>
-			<li><%= link_to "All Entries", index_path %></li>
+			<li role="presentation"><%= link_to "Home", root_path %></li>
+			<li role="presentation"><%= link_to "About", about_path %></li>
+			<li role="presentation"><%= link_to "All Topics", topics_path %></li>
 
 			<div class="pull-right user-info">
 				<% if current_user %>
-					Hello <%= current_user.email%>
-					<%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+					Hello
+					<%= link_to (current_user.name || current_user.email), edit_user_registration_path %>!
+					<%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+
 				<% else %>
-					<%= link_to "Sign In", new_user_session_path %> or 
-					<%= link_to "Sign Up", new_user_registration_path %>
+					<!-- <li class="dropdown"> -->
+						<!-- remove sign in experiment -->
+					<%= link_to "Sign In", new_user_session_path %>			
 				<% end %>
 			</div>
 		</ul>
@@ -40,7 +43,11 @@
 			</div>
 		<% end %>
 
-		<%= yield %>
+		<section class="content">
+
+			<%= yield %>
+
+		</section>
 	</div>
 
 	<footer class="footer">
