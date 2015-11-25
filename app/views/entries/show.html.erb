@@ -1,8 +1,14 @@
 <h1><%= markdown_to_html @entry.title %></h1>
 
-<% if policy(@entry).edit? %>
-	<%= link_to "Edit", edit_topic_entry_path(@topic,@entry), class: 'btn btn-success' %>
-<% end %>
-
 <p><%= markdown_to_html @entry.body %></p>
+
+<small>
+ <%= image_tag(@entry.user.avatar.tiny.url) if @entry.user.avatar? %>
+ submitted <%= time_ago_in_words(@entry.created_at) %> ago by
+ <%= @entry.user.name %>
+</small>
+
+<% if policy(@entry).edit? %>
+  <%= link_to "Edit", edit_topic_entry_path(@topic,@entry), class: 'btn btn-success' %>
+<% end %>
 
