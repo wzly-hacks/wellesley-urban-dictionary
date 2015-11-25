@@ -80,6 +80,10 @@ $ git push heroku master
 $ heroku addons
 $ heroku config:set SECRET_KEY_BASE=thegeneratedtoken
 $ heroku config
+//logging
+$ heroku logs --tail
+//if something isn't working, you probably didn't do this:
+$ heroku run rake db:migrate
 
 #sendgrid
 heroku addons:create sendgrid:starter
