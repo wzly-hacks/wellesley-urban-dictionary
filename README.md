@@ -10,7 +10,8 @@ An urban dictionary for Wellesley College. Users can explore, vote on, and contr
 - [Faker](https://github.com/stympy/faker) for seeding data.
 - [Redcarpet](https://github.com/vmg/redcarpet) for Markdown support.
 - [RSpec](https://github.com/rspec/rspec-rails), [FactoryGirl](https://github.com/thoughtbot/factory_girl_rails), and [Capybara](https://github.com/jnicklas/capybara) for tests.
-- [Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4) for app hosting
+- [Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4) for app hosting.
+- [Cloudinary](https://devcenter.heroku.com/articles/cloudinary#using-with-ruby-on-rails) for image uploading.
 
 
 ### Cloning the Project
@@ -41,7 +42,7 @@ rake routes
 #models
 rails g model Entry title:string body:text
 rails g model Comment body:text entry:references
-rails g model topic name:string public:boolean description:text
+rails g model Topic name:string public:boolean description:text
 rake db:migrate
 
 #associations
@@ -65,10 +66,16 @@ rails g devise User
 #figaro
 figaro install
 rake secret
+//update env variables in production
 figaro heroku:set -e production
 
 #authorization
 rails g pundit:install
+
+#image uploader
+rails generate uploader Avatar
+rails g migration AddAvatarToUsers avatar:string
+rake db:migrate
 ```
 
 ### Heroku command reference
@@ -84,9 +91,11 @@ $ heroku config
 $ heroku logs --tail
 //if something isn't working, you probably didn't do this:
 $ heroku run rake db:migrate
+$ heroku restart
 
-#sendgrid
+#heroku addons
 heroku addons:create sendgrid:starter
+heroku addons:create cloudinary:starter
 ```
 
 Status: stopped at uploading images.

@@ -17,6 +17,13 @@
 				<%= entry.user.name %> <br>
 				<%= entry.comments.count %> Comments
 			</small>
+
+			<small>
+				<%= image_tag(entry.user.avatar.tiny.url) if entry.user.avatar? %>
+				submitted <%= time_ago_in_words(entry.created_at) %> ago by
+				<%= entry.user.name %><br>
+				<%= entry.comments.count %> Comments
+	    </small>
 		</div>
 	</div>
 <% end %>
