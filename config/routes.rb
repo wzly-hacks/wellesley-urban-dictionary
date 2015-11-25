@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   get 'about' => 'welcome#about'
 
-  get 'index' => 'entries#index'
+  # get 'index' => 'entries#index'
   
   root to: 'welcome#index'
 end
